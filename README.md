@@ -49,34 +49,34 @@ For windows users you should activate the telnet client from windows Programs an
 
  ## Sample Commands
 
-### set key flags exptime bytes  
-### value 
+#### set key flags exptime bytes  
+#### value 
 
     set foo 0 3000 3 
     foo
 
-### get key
+#### get key
 
     get foo
 
-### gets key
+#### gets key
 
     gets foo
     
-### cas key flags exptime bytes unique_cas_key
-### value
+#### cas key flags exptime bytes unique_cas_key
+#### value
 
     cas foo 0 3000 4 1
     test 
 
-### append key flags exptime bytes
-### value
+#### append key flags exptime bytes
+#### value
 
     append foo 0 3000 3
     bar
 
-### prepend key flag exptime bytes
-### value
+#### prepend key flag exptime bytes
+#### value
 
     prepend foo 0 3000 3
     bar
@@ -87,11 +87,11 @@ Open a new terminal on the project folder and run: rspec RequestController_spec.
 
 ## Diagrams
 
-### Architectural diagram
+#### Architectural diagram
 
  ![alt text](https://github.com/MaximilianoBadiola/Memcached/blob/main/Img/MemcachedArchDiagram.png?raw=true)
 
 
-### Class diagram
+#### Class diagram
 
  ![alt text](https://github.com/MaximilianoBadiola/Memcached/blob/main/Img/MemcachedClassDiagram.png?raw=true)
