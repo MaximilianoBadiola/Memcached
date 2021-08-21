@@ -1,7 +1,7 @@
-require './Request.rb'
-require './MemTable.rb'
-require './RequestType.rb'
-require './ResponseType.rb'
+require_relative './Request.rb'
+require_relative './MemTable.rb'
+require_relative './RequestType.rb'
+require_relative './ResponseType.rb'
 
 class RequestController include RequestType
     

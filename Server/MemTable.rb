@@ -1,5 +1,5 @@
-require './Request.rb'
-require './ResponseType.rb'
+require_relative './Request.rb'
+require_relative './ResponseType.rb'
 require 'date'
 
 class MemTable
@@ -32,7 +32,9 @@ class MemTable
             if @@hashTable[keyRequest].nil?
                 return @@responseType.end_response
             else
-                return @@hashTable[keyRequest] + "\r\n" + @@responseType.end_response
+                storedRequest = @@hashTable[keyRequest] 
+                @response = storedRequest.value.to_s + " " + storedRequest.flags.to_s + " " + storedRequest.bytes.to_s + " " + storedRequest.unique_cas_key.to_s
+                return @response +"\r\n" + @@responseType.end_response
             end
         else
             return @@responseType.end_response

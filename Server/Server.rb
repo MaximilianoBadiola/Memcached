@@ -2,8 +2,6 @@ require 'socket'
 require './RequestController.rb'
 
 requestController = RequestController.new()
-#requestController.purgeExpiredKeys()
-
 
 puts "Starting the Server................... 127.0.0.1"
 server = TCPServer.new("127.0.0.1", 1337)
@@ -21,18 +19,16 @@ loop do
         execute = false
         client.puts "Connection closed by foreign host"
         client.close
-      else
-
-        if input.include? "set" or input.include? "add" or input.include? "replace" or input.include? "append" or input.include? "prepend" or input.      include? "cas"
-          
-          valueInput = client.gets
-          input = input + " " + valueInput
-        end
-
-        input = input.strip
-        response = requestController.executeRequest(input)
-        client.puts response +"\r"
       end
+
+      if not input.include? "get"
+        valueInput = client.gets
+        input = input + " " + valueInput
+      end
+
+      input    = input.strip
+      response = requestController.executeRequest(input)
+      client.puts response +"\r"
     end
   end
 end
