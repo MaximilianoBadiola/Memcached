@@ -7,9 +7,10 @@ Memcached commands allowed
 Retrieval commands:
 
     - get
-        get command is used to get the value stored at key. If the key does not exist in Memcached, then it returns nothing
+        retrieve the value stored at key. If the key does not exist in Memcached, then it returns nothing
+
     - gets
-        gets command is used to get the value with CAS token. If the key does not exist in Memcached, then it returns nothing
+        retrieve the value stored at key with CAS token. If the key does not exist in Memcached, then it returns nothing
 
 Storage commands:
 
@@ -96,7 +97,7 @@ For windows users you should activate the telnet client from windows Programs an
 
 ## Test
 
-Open a new terminal on the project folder and run: rspec RequestController_spec.rb
+Open a new terminal on the project folder and run: `rspec RequestController_spec.rb`
 
 ## Diagrams
 
